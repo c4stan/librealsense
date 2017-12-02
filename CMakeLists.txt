@@ -193,7 +193,7 @@ endif()
 # Set CMAKE_INSTALL_* if not defined
 include(GNUInstallDirs)
 
-option(BUILD_SHARED_LIBS "Build shared library" ON)
+option(BUILD_SHARED_LIBS "Build shared library" OFF)
 if(BUILD_SHARED_LIBS)
     add_library(realsense SHARED ${REALSENSE_CPP} ${REALSENSE_HPP} ${REALSENSE_DEF})
     set_target_properties(realsense PROPERTIES VERSION ${REALSENSE_VERSION_STRING}
@@ -229,7 +229,7 @@ if(BUILD_EXAMPLES)
   add_subdirectory(examples)
 endif()
 
-option(BUILD_UNIT_TESTS "Build realsense unit tests." ON)
+option(BUILD_UNIT_TESTS "Build realsense unit tests." OFF)
 if(BUILD_UNIT_TESTS)
   add_subdirectory(unit-tests)
 endif()
