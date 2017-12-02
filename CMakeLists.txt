@@ -201,6 +201,7 @@ if(BUILD_SHARED_LIBS)
     target_link_libraries(realsense ${LIBUSB1_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 else()
     add_library(realsense STATIC ${REALSENSE_CPP} ${REALSENSE_HPP})
+    target_link_libraries(realsense ${LIBUSB1_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 endif()
 
 target_include_directories(realsense PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/ ${LIBUSB1_INCLUDE_DIRS})
